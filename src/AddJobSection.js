@@ -9,15 +9,16 @@ function AddJobSection() {
 
     function addJob(e) {
         e.preventDefault()
-        fetch("https://q89sglthn6.execute-api.us-east-1.amazonaws.com/items", {
+        fetch("https://q89sglthn6.execute-api.us-east-1.amazonaws.com/jobs", {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                id: "company",
-                price: "title",
-                name: "skills",
+                id: company,
+                price: title,
+                name: skills,
+                stage: "applied"
             })
         })
         .then(resp => resp.json())

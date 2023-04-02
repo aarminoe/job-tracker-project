@@ -15,8 +15,10 @@ import { useState, useEffect } from 'react';
 
 function App() {
 
+  const [jobs, setJobs] = useState(null)
+
   useEffect(() => {
-    fetch("https://6e4v9627gg.execute-api.us-east-1.amazonaws.com/jobs") 
+    fetch("https://q89sglthn6.execute-api.us-east-1.amazonaws.com/jobs") 
     .then(resp => resp.json())
     .then(data => console.log(data))
   },[])
