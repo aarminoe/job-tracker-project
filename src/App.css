@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.header-card {
+  background-color: blue;
+  text-align: center;
+}
+
+.one-card {
+  width: 500px;
+  margin-right: 10px;
+}
+
+.single-job-card {
+  margin-top: 15px;
+}
+
+
