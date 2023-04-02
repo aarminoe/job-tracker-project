@@ -21,7 +21,11 @@ function App() {
     fetch("https://q89sglthn6.execute-api.us-east-1.amazonaws.com/jobs") 
     .then(resp => resp.json())
     .then(data => setJobList(data))
-  },[])
+  }, [])
+
+  if (jobList == null) {
+    return <h1>waiting</h1>
+  }
 
   return (
     <div>

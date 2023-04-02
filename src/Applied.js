@@ -3,18 +3,17 @@ import JobCard from './JobCard';
 import { Card } from "@mui/material";
 import { useState } from "react";
 
-function Applied() {
+function Applied({jobList}) {
 
     const [appliedJobs, setAppliedJobs] = useState(['job',"jog",'LOL'])
 
+    console.log(jobList)
     return(
         <div>
             <div>
                 <h1>Applied</h1>
-                {appliedJobs.map((job)=> {
-                    return(
-                        <JobCard job={job}/>
-                    )
+                {jobList.filter((job)=>job.stage == "applied").map((j) => {
+                   return <JobCard />
                 })}
             </div>
         </div>
