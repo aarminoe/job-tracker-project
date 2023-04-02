@@ -10,10 +10,16 @@ import { Card } from '@mui/material';
 import Closed from './Closed';
 import Header from './Header';
 import JobCard from './JobCard';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 function App() {
+
+  useEffect(() => {
+    fetch("https://6e4v9627gg.execute-api.us-east-1.amazonaws.com/jobs") 
+    .then(resp => resp.json())
+    .then(data => console.log(data))
+  },[])
 
   return (
     <div>
