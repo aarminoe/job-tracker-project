@@ -15,12 +15,12 @@ import { useState, useEffect } from 'react';
 
 function App() {
 
-  const [jobs, setJobs] = useState(null)
+  const [jobList, setJobList] = useState(null)
 
   useEffect(() => {
     fetch("https://q89sglthn6.execute-api.us-east-1.amazonaws.com/jobs") 
     .then(resp => resp.json())
-    .then(data => console.log(data))
+    .then(data => setJobList(data))
   },[])
 
   return (
@@ -29,25 +29,25 @@ function App() {
           <Card >
       <Card className="App">
         <Card className='one-card'>
-          <Applied/>
+          <Applied jobList={jobList}/>
         </Card>
         <Card className='one-card'>
-          <Round1/>
+          <Round1 jobList={jobList}/>
         </Card >
         <Card className='one-card'>
-          <Round2/>
+          <Round2 jobList={jobList}/>
         </Card>
         <Card className='one-card'>
-          <Round3/>
+          <Round3 jobList={jobList}/>
         </Card>
         <Card className='one-card'>
-          <Waiting/>
+          <Waiting jobList={jobList}/>
         </Card>
         <Card className='one-card'>
-          <Offer/>
+          <Offer jobList={jobList}/>
         </Card>
         <Card className='one-card'>
-          <Closed />
+          <Closed jobList={jobList}/>
         </Card>
       </Card>
       <div>
