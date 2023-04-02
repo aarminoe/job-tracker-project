@@ -13,9 +13,9 @@ function JobCard({job}) {
 
     return(
         <Card className="single-job-card">
-            <button onClick={moveBack}>MoveBack</button>
+            {job.stage == "applied" ? null: <button onClick={moveBack}>MoveBack</button>}
             JobCard
-            <button onClick={moveUp}>MoveUp</button>
+            {job.stage == "closed" ? null : <button onClick={moveUp}>MoveUp</button>}
         </Card>
     )
 }
