@@ -27,6 +27,11 @@ function App() {
     return <h1>waiting</h1>
   }
 
+  function newJobToJobList(newJob) {
+    let newJobList = [...jobList, newJob]
+    setJobList(newJobList)
+  }
+
   return (
     <div>
       <Header />
@@ -56,7 +61,7 @@ function App() {
       </Card>
       <div>
         <h1>Add Job</h1>
-        <AddJobSection />
+        <AddJobSection newJobToJobList={newJobToJobList}/>
       </div>
       </Card>
     </div>

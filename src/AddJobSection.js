@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-function AddJobSection() {
+function AddJobSection({newJobToJobList}) {
 
     const [company, setCompany] = useState("")
     const [title, setTitle] = useState("")
@@ -22,7 +22,7 @@ function AddJobSection() {
             })
         })
         .then(resp => resp.json())
-        .then(data => console.log(data))
+        .then(data => newJobToJobList(data))
     }
 
     

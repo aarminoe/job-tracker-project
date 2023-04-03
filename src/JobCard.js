@@ -55,11 +55,11 @@ function JobCard({job}) {
 
     return(
         <Card className="single-job-card">
-            {job.stage == "applied" ? null: <button onClick={moveBack}>MoveBack</button>}
             <div>
                 <h1>{job.company}</h1>
                 <p>{job.title}</p>
             </div>
+            {job.stage == "applied" ? null: <button onClick={moveBack}>MoveBack</button>}
             {job.stage == "closed" ? null : <button onClick={moveUp}>MoveUp</button>}
         </Card>
     )
