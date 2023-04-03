@@ -15,9 +15,9 @@ function AddJobSection() {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                id: company,
-                price: title,
-                name: skills,
+                company: company,
+                title: title,
+                skills: skills,
                 stage: "applied"
             })
         })
