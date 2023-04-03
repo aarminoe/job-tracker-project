@@ -2,14 +2,14 @@ import React from "react";
 import { useState } from "react";
 import JobCard from "./JobCard";
 
-function Waiting({jobList}) {
-    
+function Waiting({jobList, movingUpJobStage, movingDownJobStage}) {
+
     return(
         <div>
             <div>
             <h1>Waiting</h1>
             {jobList.filter((jobs)=>jobs.stage == "waiting").map((job) => {
-                   return <JobCard job={job}/>
+                   return <JobCard job={job} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
                 })}
             </div>
         </div>

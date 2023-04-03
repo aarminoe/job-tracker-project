@@ -32,31 +32,43 @@ function App() {
     setJobList(newJobList)
   }
 
+  function movingUpJobStage(updatedJob) {
+    let filteredJob = jobList.filter((job) => job.company != updatedJob.company && job.title != updatedJob.title)
+    let newJobList = [...filteredJob, updatedJob]
+    setJobList(newJobList)
+  }
+
+  function movingDownJobStage(updatedJob) {
+    let filteredJob = jobList.filter((job) => job.company != updatedJob.company && job.title != updatedJob.title)
+    let newJobList = [...filteredJob, updatedJob]
+    setJobList(newJobList)
+  }
+
   return (
     <div>
       <Header />
           <Card >
       <Card className="App">
         <Card className='one-card'>
-          <Applied jobList={jobList}/>
+          <Applied jobList={jobList} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
         </Card>
         <Card className='one-card'>
-          <Round1 jobList={jobList}/>
+          <Round1 jobList={jobList} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
         </Card >
         <Card className='one-card'>
-          <Round2 jobList={jobList}/>
+          <Round2 jobList={jobList} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
         </Card>
         <Card className='one-card'>
-          <Round3 jobList={jobList}/>
+          <Round3 jobList={jobList} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
         </Card>
         <Card className='one-card'>
-          <Waiting jobList={jobList}/>
+          <Waiting jobList={jobList} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
         </Card>
         <Card className='one-card'>
-          <Offer jobList={jobList}/>
+          <Offer jobList={jobList} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
         </Card>
         <Card className='one-card'>
-          <Closed jobList={jobList}/>
+          <Closed jobList={jobList} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
         </Card>
       </Card>
       <div>

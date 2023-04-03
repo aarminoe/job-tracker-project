@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "@mui/material";
 
-function JobCard({job}) {
+function JobCard({job, movingUpJobStage, movingDownJobStage}) {
 
     let movement = ["applied", "round1", "round2", "round3", "waiting", "offer", "closed"] 
 
@@ -27,7 +27,7 @@ function JobCard({job}) {
             })
         })
         .then(resp => resp.json())
-        .then(data => console.log(data))
+        .then(data => movingUpJobStage(data))
     }
 
     function moveBack() {
@@ -50,7 +50,7 @@ function JobCard({job}) {
             })
         })
         .then(resp => resp.json())
-        .then(data => console.log(data))
+        .then(data => movingDownJobStage(data))
     }
 
     return(
