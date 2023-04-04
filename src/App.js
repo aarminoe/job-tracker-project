@@ -11,10 +11,12 @@ import Closed from './Closed';
 import Header from './Header';
 import JobCard from './JobCard';
 import { useState, useEffect } from 'react';
+import UserPool from './UserPool';
 
 
 function App() {
 
+  console.log(UserPool)
   const [jobList, setJobList] = useState(null)
 
   useEffect(() => {
