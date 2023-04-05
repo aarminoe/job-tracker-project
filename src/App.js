@@ -29,7 +29,7 @@ function App() {
     fetch("https://q89sglthn6.execute-api.us-east-1.amazonaws.com/jobs") 
     .then(resp => resp.json())
     .then(data => {
-      let userJobList = data.filter((job) => job.user != UserPool.getCurrentUser.username)
+      let userJobList = data.filter((job) => job.user == UserPool.getCurrentUser().username)
       setJobList(userJobList)
     })
   }, [])
