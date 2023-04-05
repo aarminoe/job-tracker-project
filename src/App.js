@@ -92,25 +92,25 @@ function App() {
       </Card>
           <Card >
       <Card className="App">
-        <Card className='one-card'>
+        <Card className='one-card' style={{backgroundColor: "rgb(179, 246, 198)"}}>
           <Applied jobList={jobList} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
         </Card>
-        <Card className='one-card'>
+        <Card className='one-card' style={{backgroundColor: "rgb(147, 248, 175)"}}>
           <Round1 jobList={jobList} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
         </Card >
-        <Card className='one-card'>
+        <Card className='one-card' style={{backgroundColor: "rgb(124, 244, 158)"}}>
           <Round2 jobList={jobList} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
         </Card>
-        <Card className='one-card'>
+        <Card className='one-card' style={{backgroundColor: "rgb(108, 244, 147)"}}>
           <Round3 jobList={jobList} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
         </Card>
-        <Card className='one-card'>
+        <Card className='one-card' style={{backgroundColor: "rgb(0, 244, 69)"}}>
           <Waiting jobList={jobList} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
         </Card>
-        <Card className='one-card'>
+        <Card className='one-card' style={{backgroundColor: "rgb(210, 235, 69)"}}>
           <Offer jobList={jobList} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
         </Card>
-        <Card className='one-card'>
+        <Card className='one-card' style={{backgroundColor: "rgb(69, 230, 235)"}}>
           <Closed jobList={jobList} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
         </Card>
       </Card>
