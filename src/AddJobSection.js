@@ -28,7 +28,12 @@ function AddJobSection({newJobToJobList}) {
             })
         })
         .then(resp => resp.json())
-        .then(data => newJobToJobList(data))
+        .then(data => {
+            newJobToJobList(data)
+            setCompany("")
+            setTitle("")
+            setSkills("")
+        })
     }
 
     
@@ -37,15 +42,15 @@ function AddJobSection({newJobToJobList}) {
         <form onSubmit={addJob}>
             <p>
                 Company: 
-                <Input onChange={(e) => setCompany(e.target.value)}/>
+                <Input value={company} onChange={(e) => setCompany(e.target.value)}/>
             </p>
             <p>
                 Title:
-                <Input onChange={(e) => setTitle(e.target.value)}/>
+                <Input value={title} onChange={(e) => setTitle(e.target.value)}/>
             </p>
             <p>
                 Skills Needed:
-                <Input onChange={(e) => setSkills(e.target.value)}/>
+                <Input value={skills} onChange={(e) => setSkills(e.target.value)}/>
             </p>
             <Button onClick={addJob} className="add-job-btn">Add</Button>
         </form>
