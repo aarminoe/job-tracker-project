@@ -26,7 +26,10 @@ function App() {
   useEffect(() => {
     fetch("https://q89sglthn6.execute-api.us-east-1.amazonaws.com/jobs") 
     .then(resp => resp.json())
-    .then(data => setJobList(data))
+    .then(data => {
+      let userJobList = data.filter((job) => job.user != UserPool.getCurrentUser.username)
+      setJobList(userJobList)
+    })
   }, [])
 
   if (jobList == null) {

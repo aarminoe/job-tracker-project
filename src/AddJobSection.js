@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import UserPool from "./UserPool";
 
 function AddJobSection({newJobToJobList}) {
 
@@ -7,6 +8,8 @@ function AddJobSection({newJobToJobList}) {
     const [title, setTitle] = useState("")
     const [skills, setSkills] = useState("")
 
+    const user = UserPool.getCurrentUser()
+    console.log(user.username)
     function addJob(e) {
         e.preventDefault()
         fetch("https://q89sglthn6.execute-api.us-east-1.amazonaws.com/jobs", {
@@ -18,7 +21,8 @@ function AddJobSection({newJobToJobList}) {
                 company: company,
                 title: title,
                 skills: skills,
-                stage: "applied"
+                stage: "applied",
+                user: user.username
             })
         })
         .then(resp => resp.json())
