@@ -21,6 +21,7 @@ function App() {
 
   console.log(UserPool)
   const [jobList, setJobList] = useState(null)
+  const [loginCheck, setLoginCheck] = useState(false)
 
   useEffect(() => {
     fetch("https://q89sglthn6.execute-api.us-east-1.amazonaws.com/jobs") 
@@ -50,15 +51,13 @@ function App() {
   }
 
   function handleLoginState() {
-    console.log("You did it!")
+    setLoginCheck(true)
   }
 
   return (
     <div>
-      <Account>
-        <SignUp/>
-        <Login handleLoginState={handleLoginState}/>
-      </Account>
+      {loginCheck ? 
+      <div>
       <Header />
           <Card >
       <Card className="App">
@@ -89,6 +88,11 @@ function App() {
         <AddJobSection newJobToJobList={newJobToJobList}/>
       </div>
       </Card>
+      </div>:
+      <Account>
+      <SignUp/>
+      <Login handleLoginState={handleLoginState}/>
+      </Account>}
     </div>
 
   );
