@@ -16,6 +16,18 @@
 
 .single-job-card {
   margin-top: 15px;
+  height: 200px;
 }
 
+.add-job-card {
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 400px;
+  height: 200px;
+}
 
+.add-job.btn {
+  margin-bottom: 50px;
+}

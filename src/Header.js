@@ -5,7 +5,8 @@ function Header() {
 
     return(
         <div>
-            header
+            <h1>Jobber</h1>
+            <p>Keep up to date with your job search!</p>
         </div>
     )
 }

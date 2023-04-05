@@ -86,6 +86,10 @@ function App() {
       <div>
       <button onClick={logOut}>Log Out</button>
       <Header />
+      <Card className='add-job-card'>
+        <h3>Add Job</h3>
+        <AddJobSection newJobToJobList={newJobToJobList}/>
+      </Card>
           <Card >
       <Card className="App">
         <Card className='one-card'>
@@ -110,10 +114,6 @@ function App() {
           <Closed jobList={jobList} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
         </Card>
       </Card>
-      <div>
-        <h1>Add Job</h1>
-        <AddJobSection newJobToJobList={newJobToJobList}/>
-      </div>
       </Card>
       </div>:
       <Account>

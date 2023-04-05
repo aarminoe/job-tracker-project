@@ -60,10 +60,12 @@ function JobCard({job, movingUpJobStage, movingDownJobStage}) {
         <Card className="single-job-card">
             <div>
                 <h1>{job.company}</h1>
-                <p>{job.title}</p>
+                <h4>{job.title}</h4>
+                <p>{job.skills}</p>
             </div>
-            {job.stage == "applied" ? null: <button onClick={moveBack}>MoveBack</button>}
-            {job.stage == "closed" ? null : <button onClick={moveUp}>MoveUp</button>}
+            
+            {job.stage == "applied" ? null: <button onClick={moveBack}>←</button>}
+            {job.stage == "closed" ? null : <button onClick={moveUp}>→</button>}
         </Card>
     )
 }
