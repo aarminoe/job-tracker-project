@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import UserPool from "./UserPool";
 import { Input } from "@mui/material";
+import { Button } from "@mui/material";
 
 function AddJobSection({newJobToJobList}) {
 
@@ -46,7 +47,7 @@ function AddJobSection({newJobToJobList}) {
                 Skills Needed:
                 <Input onChange={(e) => setSkills(e.target.value)}/>
             </p>
-            <button className="add-job-btn">Add</button>
+            <Button onClick={addJob} className="add-job-btn">Add</Button>
         </form>
     )
 }

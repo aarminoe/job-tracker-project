@@ -1,6 +1,7 @@
 import React from "react";
 import { Card } from "@mui/material";
 import UserPool from "./UserPool";
+import { Button } from "@mui/material";
 
 function JobCard({job, movingUpJobStage, movingDownJobStage}) {
 
@@ -59,13 +60,13 @@ function JobCard({job, movingUpJobStage, movingDownJobStage}) {
     return(
         <Card className="single-job-card">
             <div>
-                <h1>{job.company}</h1>
+                <h3>{job.company}</h3>
                 <h4>{job.title}</h4>
                 <p>{job.skills}</p>
             </div>
             
-            {job.stage == "applied" ? null: <button onClick={moveBack}>←</button>}
-            {job.stage == "closed" ? null : <button onClick={moveUp}>→</button>}
+            {job.stage == "applied" ? null: <Button style={{backgroundColor: "rgb(218, 218, 218)"}} onClick={moveBack}>←</Button>}
+            {job.stage == "closed" ? null : <Button style={{backgroundColor: "rgb(218, 218, 218)"}} onClick={moveUp}>→</Button>}
         </Card>
     )
 }
