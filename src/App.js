@@ -19,6 +19,8 @@ import Login from './Login';
 
 function App() {
 
+  document.body.style = 'background: rgb(179, 178, 178);'
+
   console.log(UserPool)
   const [jobList, setJobList] = useState(null)
   const [loginCheck, setLoginCheck] = useState(false)
@@ -81,7 +83,7 @@ function App() {
 
 
   return (
-    <div>
+    <div className='App-page'>
       {loginCheck ? 
       <div>
       <button onClick={logOut}>Log Out</button>
@@ -90,8 +92,8 @@ function App() {
         <h3>Add Job</h3>
         <AddJobSection newJobToJobList={newJobToJobList}/>
       </Card>
-          <Card >
-      <Card className="App">
+          <Card className="App">
+      <Card className="App" style={{backgroundColor: "rgb(179, 178, 178)"}}>
         <Card className='one-card' style={{backgroundColor: "rgb(179, 246, 198)"}}>
           <Applied jobList={jobList} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
         </Card>
