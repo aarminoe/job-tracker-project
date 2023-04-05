@@ -12,6 +12,9 @@ import Header from './Header';
 import JobCard from './JobCard';
 import { useState, useEffect } from 'react';
 import UserPool from './UserPool';
+import SignUp from './SignUp';
+import { Account } from './Accounts';
+import Login from './Login';
 
 
 function App() {
@@ -46,8 +49,16 @@ function App() {
     setJobList(newJobList)
   }
 
+  function handleLoginState() {
+    console.log("You did it!")
+  }
+
   return (
     <div>
+      <Account>
+        <SignUp/>
+        <Login handleLoginState={handleLoginState}/>
+      </Account>
       <Header />
           <Card >
       <Card className="App">
