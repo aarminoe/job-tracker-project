@@ -1,11 +1,12 @@
 import React from "react";
 import { Card } from "@mui/material";
+import UserPool from "./UserPool";
 
 function JobCard({job, movingUpJobStage, movingDownJobStage}) {
 
     let movement = ["applied", "round1", "round2", "round3", "waiting", "offer", "closed"] 
 
-
+    let user = UserPool.getCurrentUser()
 
     function moveUp() {
         let newStage = ""
@@ -23,7 +24,8 @@ function JobCard({job, movingUpJobStage, movingDownJobStage}) {
                 company: job.company,
                 title: job.title,
                 skills: job.skills,
-                stage: newStage
+                stage: newStage,
+                user: user.username
             })
         })
         .then(resp => resp.json())
@@ -46,7 +48,8 @@ function JobCard({job, movingUpJobStage, movingDownJobStage}) {
                 company: job.company,
                 title: job.title,
                 skills: job.skills,
-                stage: newStage
+                stage: newStage,
+                user: user.username
             })
         })
         .then(resp => resp.json())
