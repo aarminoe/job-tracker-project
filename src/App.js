@@ -70,10 +70,21 @@ function App() {
     setLoginCheck(true)
   }
 
+  
+  function logOut() {
+    const user = UserPool.getCurrentUser()
+    if (user) {
+        setLoginCheck(false)
+        user.signOut()
+    }
+  }
+
+
   return (
     <div>
       {loginCheck ? 
       <div>
+      <button onClick={logOut}>Log Out</button>
       <Header />
           <Card >
       <Card className="App">
