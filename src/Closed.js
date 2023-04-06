@@ -5,7 +5,7 @@ import JobCard from "./JobCard";
 function Closed({jobList, movingUpJobStage, movingDownJobStage}) {
 
     return(
-        <div>
+        <div className="single-stage">
             <div>
                 <h1>Closed</h1>
                 {jobList ? jobList.filter((jobs)=>jobs.stage == "closed").map((job) => {

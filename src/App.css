@@ -50,3 +50,15 @@
 .applied-card {
   background-color: aqua;
 }
+
+.single-stage{
+  overflow-y: scroll;
+  height: 800px;
+  outline: 1px solid slategrey;
+  background-color: rgba(0,0,0,.1);
+  position: relative;
+}
+
+.single-stage::-webkit-scrollbar{
+  display: none;
+}

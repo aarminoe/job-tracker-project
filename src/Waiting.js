@@ -5,7 +5,7 @@ import JobCard from "./JobCard";
 function Waiting({jobList, movingUpJobStage, movingDownJobStage}) {
 
     return(
-        <div>
+        <div className="single-stage">
             <div>
             <h1>Waiting</h1>
             {jobList ? jobList.filter((jobs)=>jobs.stage == "waiting").map((job) => {

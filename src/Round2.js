@@ -5,7 +5,7 @@ import JobCard from "./JobCard";
 function Round2({jobList, movingUpJobStage, movingDownJobStage}) {
 
     return(
-        <div>
+        <div className="single-stage">
             <div>
             <h1>Round 2</h1>
             {jobList ? jobList.filter((jobs)=>jobs.stage == "round2").map((job) => {
