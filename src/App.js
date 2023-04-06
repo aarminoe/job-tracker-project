@@ -49,7 +49,7 @@ function App() {
   }, [])
 
 
-  if (jobList == null) {
+  if (jobList == null && UserPool.getCurrentUser() == false) {
     return <h1>waiting</h1>
   }
 
