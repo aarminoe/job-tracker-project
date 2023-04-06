@@ -2,12 +2,13 @@ import React from "react";
 import { Card } from "@mui/material";
 import UserPool from "./UserPool";
 import { Button } from "@mui/material";
+import { v4 } from "uuid";
 
 function JobCard({job, movingUpJobStage, movingDownJobStage}) {
 
-    let movement = ["applied", "round1", "round2", "round3", "waiting", "offer", "closed"] 
+    const movement = ["applied", "round1", "round2", "round3", "waiting", "offer", "closed"] 
 
-    let user = UserPool.getCurrentUser()
+    const user = UserPool.getCurrentUser()
 
     function moveUp() {
         let newStage = ""
@@ -22,6 +23,7 @@ function JobCard({job, movingUpJobStage, movingDownJobStage}) {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
+                id: job.id,
                 company: job.company,
                 title: job.title,
                 skills: job.skills,
@@ -46,6 +48,7 @@ function JobCard({job, movingUpJobStage, movingDownJobStage}) {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
+                id: job.id,
                 company: job.company,
                 title: job.title,
                 skills: job.skills,
@@ -57,6 +60,19 @@ function JobCard({job, movingUpJobStage, movingDownJobStage}) {
         .then(data => movingDownJobStage(data))
     }
 
+    
+    function deleteJob() {
+        fetch(`https://q89sglthn6.execute-api.us-east-1.amazonaws.com/jobs/${job.id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then(resp => resp.json())
+        .then(data => console.log('Deleted!'))
+    }
+    
+
     return(
         <Card className="single-job-card">
             <div>
@@ -64,7 +80,7 @@ function JobCard({job, movingUpJobStage, movingDownJobStage}) {
                 <h4>{job.title}</h4>
                 <p>{job.skills}</p>
             </div>
-            
+            <button onClick={deleteJob}>X</button>
             {job.stage == "applied" ? null: <Button style={{backgroundColor: "rgb(218, 218, 218)"}} onClick={moveBack}>←</Button>}
             {job.stage == "closed" ? null : <Button style={{backgroundColor: "rgb(218, 218, 218)"}} onClick={moveUp}>→</Button>}
         </Card>

@@ -3,6 +3,7 @@ import { useState } from "react";
 import UserPool from "./UserPool";
 import { Input } from "@mui/material";
 import { Button } from "@mui/material";
+import { v4 } from "uuid";
 
 function AddJobSection({newJobToJobList}) {
 
@@ -12,6 +13,10 @@ function AddJobSection({newJobToJobList}) {
 
     const user = UserPool.getCurrentUser()
 
+    let useruuid = v4()
+
+    console.log(useruuid)
+
     function addJob(e) {
         e.preventDefault()
         fetch("https://q89sglthn6.execute-api.us-east-1.amazonaws.com/jobs", {
@@ -20,6 +25,7 @@ function AddJobSection({newJobToJobList}) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
+                id: useruuid,
                 company: company,
                 title: title,
                 skills: skills,
