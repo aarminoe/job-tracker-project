@@ -24,6 +24,7 @@ function App() {
   console.log(UserPool)
   const [jobList, setJobList] = useState(null)
   const [loginCheck, setLoginCheck] = useState(false)
+  const [jobsAppliedTo, setJobsAppliedTo] = useState(0)
 
   useEffect(() => {
     fetch("https://q89sglthn6.execute-api.us-east-1.amazonaws.com/jobs") 
@@ -31,6 +32,7 @@ function App() {
     .then(data => {
       let userJobList = data.filter((job) => job.user == UserPool.getCurrentUser().username)
       setJobList(userJobList)
+      setJobsAppliedTo(userJobList.length)
     })
   }, [])
 
@@ -92,6 +94,9 @@ function App() {
         <h3>Add Job</h3>
         <AddJobSection newJobToJobList={newJobToJobList}/>
       </Card>
+      <div>
+        Jobs Applied To: {jobsAppliedTo}
+      </div>
           <Card className="App">
       <Card className="App" style={{backgroundColor: "rgb(179, 178, 178)"}}>
         <Card className='one-card' style={{backgroundColor: "rgb(179, 246, 198)"}}>

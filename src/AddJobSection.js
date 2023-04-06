@@ -11,7 +11,7 @@ function AddJobSection({newJobToJobList}) {
     const [skills, setSkills] = useState("")
 
     const user = UserPool.getCurrentUser()
-    console.log(user.username)
+
     function addJob(e) {
         e.preventDefault()
         fetch("https://q89sglthn6.execute-api.us-east-1.amazonaws.com/jobs", {
@@ -34,6 +34,7 @@ function AddJobSection({newJobToJobList}) {
             setTitle("")
             setSkills("")
         })
+        
     }
 
     
