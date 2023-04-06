@@ -4,7 +4,7 @@ import UserPool from "./UserPool";
 import { Button } from "@mui/material";
 import { v4 } from "uuid";
 
-function JobCard({job, movingUpJobStage, movingDownJobStage}) {
+function JobCard({job, movingUpJobStage, movingDownJobStage, handleJobDelete}) {
 
     const movement = ["applied", "round1", "round2", "round3", "waiting", "offer", "closed"] 
 
@@ -62,6 +62,7 @@ function JobCard({job, movingUpJobStage, movingDownJobStage}) {
 
     
     function deleteJob() {
+        handleJobDelete(job)
         fetch(`https://q89sglthn6.execute-api.us-east-1.amazonaws.com/jobs/${job.id}`, {
             method: "DELETE",
             headers: {
@@ -69,7 +70,7 @@ function JobCard({job, movingUpJobStage, movingDownJobStage}) {
             }
         })
         .then(resp => resp.json())
-        .then(data => console.log('Deleted!'))
+        .then(data => console.log("Delete Successful!"))
     }
     
 

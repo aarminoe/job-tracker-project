@@ -80,6 +80,11 @@ function App() {
     }
   }
 
+  function handleJobDelete(deletedJob) {
+    let newJobList = jobList.filter((job) => job != deletedJob)
+    setJobList(newJobList)
+  }
+
 
   return (
     <div className='App-page'>
@@ -97,25 +102,25 @@ function App() {
           <Card className="App">
       <Card className="App" style={{backgroundColor: "rgb(179, 178, 178)"}}>
         <Card className='one-card' style={{backgroundColor: "rgb(179, 246, 198)"}}>
-          <Applied jobList={jobList} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
+          <Applied jobList={jobList} handleJobDelete={handleJobDelete} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
         </Card>
         <Card className='one-card' style={{backgroundColor: "rgb(147, 248, 175)"}}>
-          <Round1 jobList={jobList} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
+          <Round1 jobList={jobList} handleJobDelete={handleJobDelete} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
         </Card >
         <Card className='one-card' style={{backgroundColor: "rgb(124, 244, 158)"}}>
-          <Round2 jobList={jobList} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
+          <Round2 jobList={jobList} handleJobDelete={handleJobDelete} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
         </Card>
         <Card className='one-card' style={{backgroundColor: "rgb(108, 244, 147)"}}>
-          <Round3 jobList={jobList} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
+          <Round3 jobList={jobList} handleJobDelete={handleJobDelete} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
         </Card>
         <Card className='one-card' style={{backgroundColor: "rgb(0, 244, 69)"}}>
-          <Waiting jobList={jobList} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
+          <Waiting jobList={jobList} handleJobDelete={handleJobDelete} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
         </Card>
         <Card className='one-card' style={{backgroundColor: "rgb(210, 235, 69)"}}>
-          <Offer jobList={jobList} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
+          <Offer jobList={jobList} handleJobDelete={handleJobDelete} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
         </Card>
         <Card className='one-card' style={{backgroundColor: "rgb(69, 230, 235)"}}>
-          <Closed jobList={jobList} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
+          <Closed jobList={jobList} handleJobDelete={handleJobDelete} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
         </Card>
       </Card>
       </Card>
