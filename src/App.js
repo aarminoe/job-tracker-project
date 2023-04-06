@@ -15,6 +15,7 @@ import UserPool from './UserPool';
 import SignUp from './SignUp';
 import { Account } from './Accounts';
 import Login from './Login';
+import { Button } from '@mui/material';
 
 
 function App() {
@@ -84,7 +85,7 @@ function App() {
     <div className='App-page'>
       {loginCheck ? 
       <div>
-      <button onClick={logOut}>Log Out</button>
+      <Button className='log-out-btn' color='error' onClick={logOut}>Log Out</Button>
       <Header />
       <Card className='add-job-card'>
         <h3>Add Job</h3>

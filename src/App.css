@@ -62,3 +62,8 @@
 .single-stage::-webkit-scrollbar{
   display: none;
 }
+
+.log-out-btn {
+  color: red;
+  
+}
