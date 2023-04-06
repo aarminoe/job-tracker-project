@@ -7,9 +7,9 @@ function Round3({jobList, movingUpJobStage, movingDownJobStage}) {
     return(
         <div>
             <h1>Round 3</h1>
-            {jobList.filter((jobs)=>jobs.stage == "round3").map((job) => {
+            {jobList ? jobList.filter((jobs)=>jobs.stage == "round3").map((job) => {
                    return <JobCard job={job} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
-                })}
+                }):null}
         </div>
     )
 }

@@ -9,9 +9,9 @@ function Applied({jobList, movingUpJobStage, movingDownJobStage}) {
         <div>
             <div>
                 <h1>Applied</h1>
-                {jobList.filter((jobs)=>jobs.stage == "applied").map((job) => {
+                {jobList ? jobList.filter((jobs)=>jobs.stage == "applied").map((job) => {
                    return <JobCard job={job} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
-                })}
+                }):null}
             </div>
         </div>
     )

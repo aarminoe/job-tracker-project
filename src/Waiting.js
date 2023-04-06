@@ -8,9 +8,9 @@ function Waiting({jobList, movingUpJobStage, movingDownJobStage}) {
         <div>
             <div>
             <h1>Waiting</h1>
-            {jobList.filter((jobs)=>jobs.stage == "waiting").map((job) => {
+            {jobList ? jobList.filter((jobs)=>jobs.stage == "waiting").map((job) => {
                    return <JobCard job={job} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
-                })}
+                }):null}
             </div>
         </div>
     )

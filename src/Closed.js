@@ -8,9 +8,9 @@ function Closed({jobList, movingUpJobStage, movingDownJobStage}) {
         <div>
             <div>
                 <h1>Closed</h1>
-                {jobList.filter((jobs)=>jobs.stage == "closed").map((job) => {
+                {jobList ? jobList.filter((jobs)=>jobs.stage == "closed").map((job) => {
                    return <JobCard job={job} movingUpJobStage={movingUpJobStage} movingDownJobStage={movingDownJobStage}/>
-                })}
+                }):null}
             </div>
         </div>
     )
