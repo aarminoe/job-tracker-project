@@ -25,6 +25,7 @@ function App() {
   const [jobList, setJobList] = useState(null)
   const [loginCheck, setLoginCheck] = useState(false)
   const [jobsAppliedTo, setJobsAppliedTo] = useState(0)
+  const [loggedInUser, setLoggedInUser] = useState(null)
 
   useEffect(() => {
     fetch("https://q89sglthn6.execute-api.us-east-1.amazonaws.com/jobs") 
@@ -34,7 +35,7 @@ function App() {
       setJobList(userJobList)
       setJobsAppliedTo(userJobList.length)
     })
-  }, [])
+  }, [loggedInUser])
 
   useEffect(() => {
     if (UserPool.getCurrentUser()) {
@@ -64,8 +65,9 @@ function App() {
     setJobList(newJobList)
   }
 
-  function handleLoginState() {
+  function handleLoginState(user) {
     setLoginCheck(true)
+    setLoggedInUser(user)
   }
 
   

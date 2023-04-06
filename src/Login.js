@@ -32,7 +32,7 @@ function Login({handleLoginState}) {
   function handleCheck() {
     const user = UserPool.getCurrentUser()
     if (user) {
-        handleLoginState(true)
+        handleLoginState(user)
         console.log('user fuound')
     }
 }
